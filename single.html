@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ .Title }}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="container">
+      <h1>{{ .Params.name }}</h1>
+      <img src="/images/{{ .Params.image }}" />
+      <h2>{{ .Params.institution }}</h2>
+      <a href="https://github.com/{{ .Params.github }}" target="_blank"
+        ><i class="fab fa-github"></i
+      ></a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ .Title }}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+
+      <h1>Pull Request Merge Card</h1>
+
+      <div class="row">
+        {{ range (where .Site.RegularPages "Section" "participant") }}
+        <div class="col-12 col-md-4 mb-4">
+          <div class="speakers animate">
+            <div class="top">
+              <div class="image">
+                <img src="/images/{{ .Params.image }}" />
+              </div>
+              <div class="name">
+                {{ .Params.name }}
+              </div>
+              <div class="college name">
+                {{ .Params.institution }}
+              </div>
+            </div>
+            <div class="follower">
+              <a href="https://github.com/{{ .Params.github }}" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    <!-- partial -->
+  </body>
+</html>
